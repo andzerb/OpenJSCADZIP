@@ -1,0 +1,137 @@
+/*
+ * style.css for index.html of http://OpenJSCAD.org/
+ */
+
+body { 
+   margin: 0px; 
+   padding: 2px; 
+   font-family: Helvetica, Arial, Sans;
+
+   /* viewer/canvas is screen.width x screen.height so when window 
+      is resized all remains intact, but we make sure no scrollbar appears */
+   overflow: hidden;       
+}
+
+a {
+   text-decoration: none;
+   color: #6020a0;
+   font-weight: bold;
+}
+
+a:visited {
+   color: #6020a0;
+}
+
+#header {
+   position: absolute;
+   top: 1em;
+   left: 1em;
+   z-index: 1;
+}
+
+#editor { 
+   width: 40%;
+   top: 0px;
+   bottom: 0px;
+   /* height: 100%;    note: newer ace expects height */
+   right: 0px;
+   z-index: 6;
+   background: rgba(255,255,255,0.15);
+}
+
+#viewer {
+   background: #fff;
+   width: 100%;
+   top: 0px;
+   bottom: 0px;
+}
+canvas { 
+   cursor: move; 
+   padding: 0px; 
+   margin: 0px;
+}
+#hint {
+   z-index: 10;
+
+   opacity: 0.8;
+   -moz-opacity: 0.8;   /* css mess (why do it simple, when we can do it complicate!) */
+
+   font-size: 0.6em;
+   top: 70px;
+   left: 20px;
+   width: 30%
+   height: 300px;
+   position: absolute;
+   background: #fff;
+   border: 1px solid #999;
+
+   border-radius: 5px;
+   -moz-border-radius: 5px;    /* css mess (why do it simple, when we can do it complicate!) */
+   -webkit-border-radius: 5px;
+
+   padding: 1em;
+   box-shadow: 0px 0px 15px black;
+   cursor: move;  /* it's draggable */
+}
+
+#hint table {
+   border-spacing: 0;
+   border-collapse: collapse;
+   margin-bottom: 0.5em;
+}
+
+#hint table td {
+   margin: 0px;
+   padding-left: 2px;
+   padding-right: 2px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-size: 0.6em;
+}
+
+.closeButton {
+   right: 0px;
+   top: 0px;
+   margin: 3px; 
+   position: absolute;
+   z-index: 4;
+   cursor: auto;
+}
+
+#hint .type {
+   color: rgba(80,80,80,0.6);
+}
+
+#footer {
+   font-size: 0.7em;
+   text-align: left;
+   position: absolute; 
+
+   margin-left: 1.5em;
+   bottom: 0.5em; 
+   
+   opacity: 0.5;    
+   -moz-opacity: 0.5;      /* css mess (why do it simple, when we can do it complicate!) */
+}
+
+#tail { 
+   z-index: 4;
+   position: absolute;
+   bottom: 1em; 
+   margin: 1em;
+}
+
+#busy {
+   vertical-align: middle;
+}
+
+.support {
+   vertical-align: bottom;
+}
+
+/* we choose chrome theme for ace, and make sure line number is transparent too */
+.ace-chrome .ace_gutter { 
+   border-left: 2px dashed rgba(200,200,200,0.2);
+   background: none;
+}
+
